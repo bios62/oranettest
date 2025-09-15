@@ -1,38 +1,44 @@
 # oranettest
 Simple java program for testing of Oracle Net round trip time
-How to Compile and Run
 
-    Download the JDBC Driver: You need the Oracle JDBC driver (e.g., ojdbc8.jar). You can download it from the Oracle website.
+# Simple Java Program for Testing Oracle Net Round Trip Time
 
-    Save the Code: Save the code above as OraclePerformanceTester.java.
+---
+## How to Compile and Run
 
-    Compile: Open a terminal or command prompt and compile the program, including the JDBC driver in the classpath.
+1.  **Download the JDBC Driver**: You'll need the Oracle JDBC driver (e.g., `ojdbc8.jar`). You can download it directly from the Oracle website.
+2.  **Save the Code**: Save the provided Java code as `OraclePerformanceTester.java`.
+3.  **Compile**: Open your terminal or command prompt and compile the program. Make sure to include the JDBC driver in the classpath.
 
+    ```bash
     javac -cp .:ojdbc8.jar OraclePerformanceTester.java
+    ```
 
-    (Note: On Windows, use a semicolon ; instead of a colon :)
+    (On Windows, use a semicolon `;` instead of a colon `:`)
+
+    ```bash
     javac -cp .;ojdbc8.jar OraclePerformanceTester.java
-    Run: Execute the compiled program, again including the driver in the classpath.
+    ```
 
+4.  **Run**: Execute the compiled program, including the driver in the classpath once more.
+
+    ```bash
     java -cp .:ojdbc8.jar OraclePerformanceTester <username> <password> <tnsname> <delay> <tests>
+    ```
 
-    (Windows)
-
-    java -cp .;ojdbc8.jar OraclePerformanceTester <username> <password> <tnsname> <delay> <tests>
-
-Example Command:
-java -cp .:ojdbc8.jar OraclePerformanceTester "scott" "tiger" "localhost:1521/orcl" 5 10
-
-Program Parameters Help
+---
+### Program Parameters Help
 
 The program requires five command-line parameters to run. You must provide them in the following order:
 
-    <username>: Your Oracle database username.
+* **`<username>`**: Your Oracle database username.
+* **`<password>`**: The password for the specified username.
+* **`<tnsname>`**: The Oracle TNS (Transparent Network Substrate) name or connection string, typically in the format `hostname:port/service_name`.
+* **`<delay>`**: The number of seconds the program should wait between each test query.
+* **`<tests>`**: The total number of loops or queries to execute.
 
-    <password>: The password for the specified username.
+---
+**Example Command:**
 
-    <tnsname>: The Oracle TNS (Transparent Network Substrate) name or connection string. This is typically in the format hostname:port/service_name.
-
-    <delay>: The number of seconds the program should wait between each test query.
-
-    <tests>: The total number of loops or queries to execute.
+```bash
+java -cp .:ojdbc8.jar OraclePerformanceTester "scott" "tiger" "localhost:1521/orcl" 5 10
