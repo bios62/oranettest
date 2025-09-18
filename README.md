@@ -5,7 +5,7 @@ Simple java program for testing of Oracle Net round trip time
 
 ---
 ## How to Compile and Run
-1.  **prereq**:
+1.  **Prereq**:
   
     - JDK 17 or newer
     - Oracle Instant client 23
